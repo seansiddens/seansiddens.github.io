@@ -28,16 +28,16 @@ bio: My research interests include distributed robotics, mobile computing and pr
 
 # Interests to show in About widget
 interests:
-  - Computer Graphics
-  - Parallel and High Performance Computing
+  - Computer Graphics - Real time, light transport
+  - GPU Programming
   - Computer Architecture
-  - Compilers and Programming Languages
+  - Compilers
 
 # Education to show in About widget
 education:
   courses:
     - course: BSc in Computer Science
-      institution: University Of California
+      institution: University Of California, Santa Cruz
       year: 2023
 
 # Social/Academic Networking
@@ -71,11 +71,11 @@ social:
     link: uploads/resume.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: ''
+email: 'seansiddens@gmail.com'
 
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 ---
 
-Alice Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Hey 👋, I'm Sean. I recently graduated with my BSc in Computer Science from University of California, Santa Cruz. There, I worked as a student researcher in the Concurrency and Heterogenous Programming Lab led by [Tyler Sorensen](https://users.soe.ucsc.edu/~tsorensen/). Right now I'm applying for graduate school for 2023-2024.
 {style="text-align: justify;"}
