@@ -9,3 +9,5 @@ node_modules/
 go.sum
 .hugo_build.lock
 # hugo
+# Private key.
+gh-pages 
