@@ -6,7 +6,7 @@
 # Appearance
 
 appearance:
-  theme_day: coffee 
+  # theme_day: coffee  # Force default to dark mode
   theme_night: dark 
   font: rose 
   font_size: l
