@@ -24,14 +24,16 @@ role: Computer Science Student
 #     url: https://www.stanford.edu/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+# bio: 
 
 # Interests to show in About widget
 interests:
-  - Computer Graphics - Real time rendering, physically based light transporrt
-  - GPU Programming
-  - Computer Architecture
-  - Compilers
+  - GPU Programming - fine grained synchronization, GPGPU,
+  - Computer Graphics - Real time rendering, physically based light transport, GPU driven rendering
+  - Compilers - unified programming models
+  - Computer Architecture  
+  - Mathematical/Scientific Visualization
+
 
 # Education to show in About widget
 education:
@@ -54,12 +56,12 @@ social:
     label: Follow me on Twitter
     display:
       header: true
-  - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
-    icon_pack: fas
-    link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  # - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
+  #   icon_pack: fas
+  #   link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
   - icon: github
     icon_pack: fab
-    link: https://github.com/gcushen
+    link: https://github.com/seansiddens
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/
@@ -77,5 +79,5 @@ email: 'seansiddens@gmail.com'
 highlight_name: true
 ---
 
-Hey 👋, I'm Sean. I recently graduated with my BSc in Computer Science from University of California, Santa Cruz. There, I worked as a student researcher in the Concurrency and Heterogenous Programming Lab led by [Tyler Sorensen](https://users.soe.ucsc.edu/~tsorensen/). Right now I'm applying for graduate school for 2023-2024.
+Hey 👋, I'm Sean. I recently graduated with my BSc in Computer Science from University of California, Santa Cruz. There, I worked as a student researcher in the Concurrency and Heterogenous Programming Lab led by [Tyler Sorensen](https://users.soe.ucsc.edu/~tsorensen/). Right now I'm applying for graduate school for 2024-2025.
 {style="text-align: justify;"}
