@@ -18,8 +18,8 @@ marketing:
     site_type: Person
     local_business_type: ''
     org_name: ''
-    description: 'A highly-customizable Hugo academic resume theme powered by Wowchemy website builder.'
-    twitter: 'wowchemy'
+    description: 'Sean Siddens\u0027 personal blog and portfolio.'
+    twitter: 'SeanSiddens'
   analytics:
     google_analytics: ''
     baidu_tongji: ''
@@ -35,7 +35,7 @@ header:
   navbar:
     enable: true
     align: l
-    show_logo: true
+    show_logo: false
     show_language: false
     show_day_night: true
     show_search: true

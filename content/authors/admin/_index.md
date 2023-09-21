@@ -28,7 +28,7 @@ bio: My research interests include distributed robotics, mobile computing and pr
 
 # Interests to show in About widget
 interests:
-  - Computer Graphics - Real time, light transport
+  - Computer Graphics - Real time rendering, physically based light transporrt
   - GPU Programming
   - Computer Architecture
   - Compilers
