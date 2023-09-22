@@ -333,9 +333,232 @@ At that point, the emittance term of the equation would be non-zero, and the int
 This algorithm is known as *Monte Carlo ray tracing*.
 
 ## Path Tracing
+Monte Carlo ray tracing will an unbiased estimate of the rendering equation, and will converge to the solution given enough samples.
+However, the exponential branching factor due to taking multiple samples of the integral still needs to be addressed.
+One solution is to simply take *one* sample for each estimate of the integral.
+This strategy will simulate a single path of light through the scene for each initial view ray that is shot.
+This algorithm is what is known as *Monte Carlo path tracing*.
 
+A basic outline of the algorithm is as follows [13]:
+
+1. For each pixel, shoot a ray starting at the eye that extends through the pixel and into the scene.
+2. Compute ray-scene intersection information for the hit surface point.
+3. If surface point emits light ($L_e > 0$), return this value. If not, then the reflected energy from other points in the scene to this point needs to be estimated, which is done by taking a \textit{single} sample.
+4. Sample is a random direction $\omega_i$ on the hemisphere, selected according to some PDF. A ray is shot in that direction in order to sample incoming light coming from somewhere else in the scene, thus extending the path by one segment. 
+5. Algorithm continues on step 2, terminating when the path reaches a light source or leaves the scene.
+
+{{< figure src="pt.png" caption="Comparison of the Monte Carlo ray tracing (a) and Monte Carlo path tracing (b) algorithms. MC ray tracing results in many branching recursive calls due to the ray tree. MC path tracing only takes one sample per hemisphere, but many paths need to be traced per pixel. Image credit: [15]" numbered="true" >}}
+
+In isolation, each path will be a poor approximation of the rendering equation, but if enough paths are traced, the aggregate of these paths will converge to the actual value of the rendering equation.
+One way to reason about how the algorithm works is that it essentially simulates a subset of all possible paths photons take from the light source and to the eye/sensor. 
+Images are simply the results of photons being emitted from some light source, bouncing around, then eventually making it to the camera.
+The algorithm simply simulates a subset of those paths.
+As more paths are traced, the image will get better.
+This is known as a *consistent* estimator: as more samples are taken, the error will go to zero, and the estimate will converge to the actual value of the function [2].
+
+### Ray Termination
+One may run into issues with the algorithm described above in scenes where light paths could potentially be extremely long due to light bouncing many times before eventually making it to a light source or leaving the scene.
+Because of this, most implementations use some method to terminate the path tracing procedure once a certain condition has been met.
+The simplest solution is to cut off all paths of a certain length N.
+If the path being traced reaches this length, the recursion is stopped and the path won't have any contribution to the image.
+
+The issue with this strategy is that some of the long paths that are being terminated can potentially have a large contribution to the image.
+The optimal technique used (known as *Russian roulette*) keeps path lengths from ballooning to infinity but still allows the potential of exploring these long paths [2].
+Before each step of the path tracing procedure, a probability $\alpha = 1 - P$ of terminating the path and stopping the recursion is assigned.
+$\alpha$ is known as the *absorption probability*.
+In order to keep the estimator unbiased, the sample must be weighted by $1 / P$.
+If $\alpha$ is large, then the path lengths will be cut short more often, and the variance will be higher, but if it's too small, path lengths may become too long.
+Russian roulette won't decrease variance (in fact, it often increases it), but it can improve *efficiency* by skipping paths which are likely to not make a large contribution [9].
+The absorption probability can be chosen dynamically based on the material, such as making it higher for dark materials. 
+This can reduce the likelihood of increasing variance while still improving overall efficiency.
+
+# Reducing Variance
+
+
+The simplest version of the MC path tracing algorithm will produce accurate images, but the estimator is still extremely high in variance.
+This means than an extremely large number of samples is needed to converge to a good looking image absent of noise.
+Some scenes, such as very dark scenes with few light sources, may practically be impossible to render fully without noise, since doing so may require tens of millions of paths to be traced per pixel.
+If the variance can be reduced, then a better looking image can be computed with far less samples (and thus in far less time).
+Because of this, much of computer graphics research in this field has been dedicated to figuring out techniques which reduce the variance of the Monte Carlo estimator used for the rendering equation.
+
+## Importance Sampling
+
+The variance of the estimator described earlier can be reduced by taking samples from a probability distribution $p(x)$ that is similar to the function $f(x)$ in the integrand [9].
+The idea behind this is that it is better to choose more samples which will have a higher contribution to the final value of the equation.
+For example, if the probability distribution sampled a higher proportion of directions at glancing angles from the surface, time would be wasted computing light paths which won't end up contributing anything, since the geometric term will cause the whole integrand to go to near zero.
+
+This can be proven with the definition of variance described earlier:
+
+$$
+Var[F] = E[F^2] - E[F]^2
+$$
+
+where F is the estimator.
+$E[F]$ is just the value of the integral being estimated, $E[F^2]$ needs to be minimized.
+Recall that $F = f(x)/p(x)$, so then it is desirable to have $p(x)$ large where $f(x)$ is also large, keeping the term small [17].
+
+
+In practice, this means having a sampling distribution which closely matches the BRDF.
+For example, the ideal PDF for the pure diffuse BRDF illustrated in figure \ref{brdf} would be one which samples directions equally on the hemisphere.
+An ideal PDF for the specular surface would be one which directed samples around the point of reflection, since that's where most of the actual light contribution will be coming from.
+
+{{< figure src="importance-sampling.png" caption="Demonstration of the benefit of importance sampling. Image credit: [15]" numbered="true" >}}
+
+Another technique, known as *light sampling*, samples from directions which go towards the light source. 
+This is because the light energy from these directions will dominate the total contribution to the point visible to the light source, so it's better to direct more samples in that direction instead of generating them randomly.
+As can be seen in figure 11, this technique can have significant performance improvements, especially in a dark scene with few light sources.
+
+## Multiple Importance Sampling
+The issue with choosing a PDF which matches the function being integrated is that, for the case of rendering, the function is very complicated.
+For one thing, the integrand in the rendering equation is a combination of many terms. 
+Additionally, the function varies widely depending where in the scene and in what direction it's being evaluated.
+Because of this, sticking to a single sampling strategy, such as BRDF or light sampling, won't be suitable for the entire scene.
+Figure 12 demonstrates this idea: certain sampling strategies have strengths and weaknesses in different parts of the scene. Again, this is simply due to the fact that the rendering equation is composed of multiple terms and highly varies depending on where in the scene the sample is being sent from.
+
+{{< figure src="mis.png" caption="Multiple importance sampling combines multiple sampling strategies to capture strengths of each. Image(s) credit: [16]." numbered="true" >}}
+
+The optimal solution is then to use multiple sampling strategies, combining them into a single strategy which preserves each of their strengths. 
+This known as *multiple importance sampling*, and is achieved through a *weighted combination* of the different strategies.
+A simple averaging of samples taken from different distributions is insufficient due to the fact that variance is additive. 
+Once the variance is there, averaging the different sampling strategies will not get rid of it.
+The key idea is to *weight* the sample from each distribution in a way which reduces the most variance [16].
+
+The heuristic developed which was created to find this optimal weighting is called the *balance heuristic*.
+If the value sampled from a distribution $p$ at a point $x$ is low, but the distribution is a good match for the function $f$, then the value at $f(x)$ should also be low.
+However, if the other probability distributions are high at that sampled point, the weights need to be created such that the sample from $p$ is weighted much higher than the other samples.
+This process can be done adaptively across the domain of the function being estimated (e.g. at any point in the scene), thus leveraging the use of multiple sampling strategies while preserving the strength of each one.
+Figure 12(c) shows that combining the two sampling strategies in this manner results in a far less noisy image compared to if only one of the strategies were used for rendering the entire scene.
+
+## Bidirectional Path Tracing
+One method for variance reduction which was first introduced in 1995 was *bidirectional path tracing* [17].
+This method builds upon the path tracing algorithm by forming paths which start from both the eye and the light source simultaneously.
+
+{{< figure src="bdpt.png" caption="Light paths are constructed from the eye and the light source. Figure credit: [17]" numbered="true" >}}
+
+Figure 13 illustrates the algorithm: a path can be constructed simultaneously from the light and the eye.
+Each step of these paths are random due to the nature of Monte Carlo integration, but the connection of the two paths is deterministic.
+The choice of where to place the partition between the two paths is explicit: if the total path length is $k$, then there's $k$ choices to partition the entire path into $m$ eye steps and $n$ light steps (where $m + n + 1 = k$) [17].
+
+Each choice of how to partition the path results in an estimator with a different variance (see figure 14(a)).
+The algorithm developed calculates the optimal combination of these estimators which results in the lowest overall variance.
+This technique essentially uses multiple importance sampling to optimally weight the different path contributions.
+Figure 14 shows how this technique successfully results in rendered images which have significantly less noise than standard path traced images, but is achieved with the same amount of work.
+
+{{< figure src="bdpt-comp.png" caption="Demonstration of how the individual bidirectional techniques can capture different aspects of the image (a) and be combined into a final image (b). Image credit: [16]" numbered="true" >}}
+
+Bidirectional path tracers perform extremely well for certain scenes which exhibit tricky lighting behavior. 
+For example, consider the scene in figure 15, where the scene is being illuminated solely from indirect illumination coming from a single light source enclosed in a wall sconce. 
+If rays are only traced starting from the camera, "most of the paths will have no contribution, while a few of them — the ones that happen to hit the small region on the ceiling — will have a large contribution " [9].
+Tracing a path from the camera which happens to make it back to the light source is extremely unlikely.
+The result of this is an extremely noisy final image due to this high variance.
+However, if rays are traced using the bidirectional technique, more paths will  be traced which directly connect to the light source, resulting in a far less noisy image for the same number of samples.
+
+{{< figure src="bi-univ.png" caption="Box illuminated by a light source within a wall sconce. Left is rendered by a traditional unidirectional path tracer, while the right is from a bidirectional path tracer. Bidirectional tracing results in far less noise. Image credit: [1]" numbered="true" >}}
+
+# Hardware Acceleration
+Even with all of the techniques to speed up Monte Carlo path tracing discussed thus far, practically rendering an entire feature length film is extremely challenging.
+In a 90-minute movie, there are about 130,000 frames [1].
+Each frame contains at least two million pixels (at least four million for IMAX).
+Therefore, at least 260 *billion* pixels need to be computed for the final render of an animated film.
+No matter how much algorithmic speedup can be gained, performing each one of these computation tasks one at a time is a fool's errand.
+
+This is where *hardware acceleration* comes in.
+The Monte Carlo path tracing algorithm thus described is *embarrassingly parallel*, meaning that the work can be evenly split up into multiple independent tasks without needing to worry about synchronization or data races.
+Each path traced is essentially it's own isolated routine which only requires a description of the scene data, not needing to modify any global state.
+The only synchronization involved in the entire algorithm would be combining all of the paths into a single image.
+Because of this, MC path tracing is primed for the leveraging of hardware-accelerated optimizations which execute the algorithm in parallel.
+
+## SIMD Ray Tracing
+In 1999, Intel introduced *single instruction multiple data* (SIMD) instructions to their CPUs [1].
+These instruction essentially allow for the execution of multiple (often 4 to 8) computations to be carried out at the same time.
+This is achieved using specialized hardware, meaning that using these SIMD instructions where needed can result in far greater speedups than if a single instruction were just repeated.
+
+The obvious application of these instructions is for the tracing of multiple rays at a time.
+This can be used to trace coherent rays which are near each other by testing their intersections against a single triangle.
+Or, a single ray intersection can be tested against multiple triangles simultaneously.
+Additionally, SIMD instruction can be used to used to quickly traverse the BVH by intersection testing against multiple bounding boxes at the same time [1].
+
+## Multithreading
+As mentioned earlier, the nature of the path tracing algorithm means that rendering software can be easily refactored to leverage parallelism. 
+Modern CPUs contain many cores which can execute code in parallel.
+Programmers can utilize these cores by splitting up code to be executed by multiple *threads*.
+The most straightforward and effective manner of dividing up path tracing work on multi-core CPUs is to simply have each thread render a chunk of the image.
+
+Scaling issues with this technique can occur due to reality that all of the data needed for rendering (scene and material data) cannot be present in the cache at the same time.
+Memory access is oftentimes incoherent, meaning that L1 cache data will be frequently evicted [1].
+This issue is only further exasperated with the introduction of additional cores.
+
+Regardless of this practical limitation, designing a renderer with hardware in mind is the only way to achieve maximum performance.
+Intel has created their own ray tracing framework known as Embree which is designed to best utilize their x86 CPU capabilities to accelerate ray intersection tests and BVH traversal [18]. 
+They provide an API which can be easily introduced to existing renderers without having to do a full refactor.
+By having a framework which explicitly targets a specific hardware architecture, they can achieve significant performance gains over a renderer which doesn't utilize any hardware acceleration.
+
+## GPU Ray Tracing
+GPUs are specialized hardware which are best suited for massively parallel computational tasks.
+They were developed for the use in computer graphics rendering with the triangle rasterization algorithm.
+Over time, their architecture and programming model has slowly switched to focusing on general computational tasks instead of fixed-function graphics rendering.
+This can be seen in the rise of GPU usage in non-graphics domains such as cryptocurrency mining and the training of AI models.
+
+This general compute capability can be leveraged for path tracing.
+The simplest way to do this is to write the entire renderer inside a *pixel shader*, which is a GPU program which runs in parallel for every pixel in an image being rendered.
+The pixel shader would be in charge of determining the color of the final image using the Monte Carlo path tracing algorithm discussed thus far.
+This will be referred to as the *megakernel* approach, since it involves fitting the entire path tracing algorithm into a single GPU program (kernel).
+
+The issue with this strategy is that a naive direct port of the CPU algorithm will not fully utilize the full hardware capabilities of the GPU.
+Certain pixels in the image (such as those which have simple materials or contain simple geometry) will execute much faster than other pixels, which results in severe hardware under-utilization.
+This is only further exacerbated by control flow divergence due to branch statements in the algorithm.
+Every core on the GPU executes the same instruction in lock-step, *regardless of what branch is taken*.
+Every control flow path is executed by every single core, resulting in an immense amount of needless computation [19].
+ 
+Furthermore, GPU memory has much higher latency than CPU memory.
+To address this, GPUs have many threads (far more than the actual number of cores) execute concurrently so that threads can be switched out whenever they wait for a memory fetch.
+The preemption and scheduling overhead is negligible compared to the speedup gained from hiding the memory latency issues.
+However, the megakernel approach restricts the number of threads which can be ran concurrently due to the fact that each thread will require far more registers.
+Every core shares a single register file, so fewer threads overall will be able to be ran concurrently without register spilling [19].
+
+The *wavefront path tracing* algorithm was developed to address these issues [19].
+This algorithm splits up the megakernel strategy into four separate smaller programs. 
+These four smaller programs represent phases of the path tracing algorithm, and their work is comprised of rays instead of pixels.
+This strategy better avoids the issues of workload imbalance, control flow divergence, and register spilling, thus better utilizing the full capabilities of modern GPU hardware.
+
+### Denoising
+One of the properties of a Monte Carlo estimator is that increasing the number of samples has diminishing returns.
+This means that when rendering an image, about 95% of the noise can be removed fairly quickly, but that last 5% can be extremely challenging to fully remove. 
+
+Instead of tracing millions of more paths to resolve a tiny portion of the image, it is far more worth it to use a post-process effect known as *denoising* instead. 
+GPUs are extremely good at image processing and are always used for these algorithms. 
+The most basic form of denoising is just a simple blur, which averages the color of each pixel with it's neighbors' colors.
+The issue with this is that it isn't "feature-guided".
+Noise from diffuse reflection can be different than noise from specular reflections. 
+Additionally, the denoising process should preserve the detailed parts of the scene and object edges [1].
+
+The solution is to have a denoising strategy which takes all of these features into consideration.
+This means that when processing each pixel, it has knowledge of "the average depth, surface normal, motion vector, surface albedo, specular and diffuse reflection, as well as variance estimates" [1].
+
+{{< figure src="denoise.png" caption="Comparison of a noisy frame and a frame which has been denoised. Image credit: [1]" numbered="true" >}}
+
+Another strategy is to use machine learning models for denoising.
+NVIDIA's OptiX™ AI-Accelerated denoiser was trained on tens of thousands of images of rendered scenes [20].
+Then, it was taught remove the noise from these images to most accurately reach the original image. 
+These neural network denoisers are proving to be extremely good at the denoising process, and allows for much less of the image to actually be computed, since the denoiser can simply reconstruct the finer details.
+
+# Conclusion
+Since its inception, the field of computer graphics has strove to develop techniques which best replicate and simulate the natural world. 
+Physically accurate light transport is the single most important aspect to a photorealistic rendering.
+Without it, the image is destined to remain artificial.
+Since Kajiya introduced the rendering equation in 1986, it has been the dream of researchers to develop a method which perfectly solves the light transport problem in the most efficient way.
+
+However, simulating light to such a level that it can fool the human eye takes immense computational power and countless clever optimizations.
+The utilization of Monte Carlo methods for solving the underlying algorithm allows for an estimation to be good enough for solving the problem, but this estimate still extremely hard to compute.
+The source of the amazing performance improvements of Monte Carlo path tracing has been thanks to a combination of the development of new algorithmic techniques and rapidly progressing new hardware.
+
+Research into light transport and physically based rendering is not slowing down.
+Although this paper mainly discussed relatively old techniques which have been around for years, there have been many modern algorithm and hardware breakthroughs in recent years.
+The demand for immersive media will only get stronger as the technology gets better and better.
+Real-time photorealistic rendering will be the technology which unlocks the feasibility of completely immersive virtual reality, and will usher in a new age of human-digital interaction.
 
 # References
+
 1. Christensen, P.H. and Jarosz, W. 2016. The path to path-traced movies. Foundations and Trends® in Computer Graphics and Vision 10, 2, 103–175
 2. Dutré Philip, Bala, K., and Bekaert, P. 2006. Advanced global illumination. CRC Press. 
 3. Fascione, L., Hanika, J., Pieké, R., et al. 2018. Path tracing in production. ACM SIGGRAPH 2018 Courses. 
