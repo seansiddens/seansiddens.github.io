@@ -1,16 +1,16 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Epiphron (C++, OpenCL)"
-summary: "Benchmark suite geared towards fine-grained synchronization and dynamic work allocation on GPUs."
+title: "CPU Path Tracer (C)"
+summary: "A simple path tracer written in C. Code is adpated from Peter Shirley's Ray Tracing in One Weekend book series. "
 authors: []
 tags: []
 categories: []
-date: 2023-09-21T14:29:17-07:00
-weight: 1
+date: 2023-09-21T19:02:11-07:00
+weight: 4
 
 # Optional external URL for project (replaces project detail page).
-external_link: "https://github.com/ucsc-chpl/epiphron"
+external_link: "https://github.com/seansiddens/PathTracer"
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.

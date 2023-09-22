@@ -1,16 +1,16 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Epiphron (C++, OpenCL)"
-summary: "Benchmark suite geared towards fine-grained synchronization and dynamic work allocation on GPUs."
+title: "Bohemian Matrices (Python)"
+summary: "A script for visualizing the distributions of eigenvalues of random distributions of square matrices."
 authors: []
 tags: []
 categories: []
-date: 2023-09-21T14:29:17-07:00
-weight: 1
+date: 2023-09-21T19:04:41-07:00
+weight: 5
 
 # Optional external URL for project (replaces project detail page).
-external_link: "https://github.com/ucsc-chpl/epiphron"
+external_link: "https://github.com/seansiddens/BohemianMatrices"
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.

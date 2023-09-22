@@ -1,16 +1,16 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: "Epiphron (C++, OpenCL)"
-summary: "Benchmark suite geared towards fine-grained synchronization and dynamic work allocation on GPUs."
+title: "Vulkan Renderer (C++, Vulkan)"
+summary: "A Vulkan 3D rendering engine. Features OBJ mesh loading, FPS and acrball camera systems, PBR and Blinn Phong materials, point, directional, and cubemap lighting."
 authors: []
 tags: []
 categories: []
-date: 2023-09-21T14:29:17-07:00
-weight: 1
+date: 2023-09-21T18:47:41-07:00
+weight: 2 # use to control page ordering.
 
 # Optional external URL for project (replaces project detail page).
-external_link: "https://github.com/ucsc-chpl/epiphron"
+external_link: "https://github.com/seansiddens/VulkanEngine"
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
