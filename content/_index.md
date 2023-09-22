@@ -282,7 +282,7 @@ gallery_item:
   caption: A rendering from my CPU path tracer. Scene is illuminated by an emmisive sphere. [{{< icon name="github" pack="fab" >}}](https://github.com/seansiddens/Pathtracer)
 - album: demo
   image: ja_DLA_colors.gif
-  caption: A rendering from my CPU path tracer. Scene is illuminated by an emmisive sphere. [{{< icon name="github" pack="fab" >}}](https://github.com/seansiddens/Pathtracer)
+  caption: Diffusion limited aggregation simulation with compute shaders.[{{< icon name="github" pack="fab" >}}](https://github.com/seansiddens/DLA)
 - album: demo
   image: ka_eigenvalue_rotation.gif
   caption: Rotating the matrice distribution. [{{< icon name="github" pack="fab" >}}](https://github.com/seansiddens/BohemianMatrices)
