@@ -3,7 +3,7 @@
 
 title: "Computing Photorealistic Images: An Overview of Monte Carlo Global Illumination Algorithms"
 subtitle: ""
-summary: "Adapted from my final paper for CSE 185: Introduction to Technical Writing."
+summary: "Adapted from my final paper for CSE 185: *Technical Writing for Computer Science and Engineering*."
 authors: [Sean Siddens]
 tags: []
 categories: []
