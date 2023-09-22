@@ -28,7 +28,7 @@ role: Computer Science Student
 
 # Interests to show in About widget
 interests:
-  - GPU Programming - fine grained synchronization, GPGPU,
+  - GPU Programming - fine grained synchronization, dynamic work allocation, GPGPU
   - Computer Graphics - Real time rendering, physically based light transport, GPU driven rendering
   - Compilers - unified programming models
   - Computer Architecture  
@@ -79,5 +79,14 @@ email: 'seansiddens@gmail.com'
 highlight_name: true
 ---
 
-Hey 👋, I'm Sean. I recently graduated with my BSc in Computer Science from University of California, Santa Cruz. There, I worked as a student researcher in the Concurrency and Heterogenous Programming Lab led by [Tyler Sorensen](https://users.soe.ucsc.edu/~tsorensen/). Right now I'm applying for graduate school for 2024-2025.
+Hey 👋, I'm Sean. I recently graduated with my BSc in Computer Science from University of California, Santa Cruz. There, I worked as a student researcher in the Concurrency and Heterogenous Programming Lab led by [Tyler Sorensen](https://users.soe.ucsc.edu/~tsorensen/). 
+There, I worked as a research assistant helping out on [Epiphron](git@github.com:ucsc-chpl/epiphron.git), a portable benchmark suite studying fine-grained synchronization and dynamic work allocation on GPUs. 
+Right now I'm applying for graduate school for 2024-2025.
 {style="text-align: justify;"}
+
+My research interests generally revolve around leveraging hardware to speed up compute intensive workloads. Specifically, I'm interested in GPU programming, especially in application of dynamic and irregular workloads. 
+It's always more fun when your program produces something [cool looking](#gallery), so I'm especially interested in applying GPU programming to computer graphics and simulation.
+Parallel programming is hard, so I'm also interested in the potential of compilers and programming models in taking on the burden of producing performant code that runs fast across every vendor and even accelerator.
+
+<!-- This experience expanded my understanding of what GPUs were capable of. -->
+<!-- I implemented a global software barrier exploiting a persistent thread model, and researched various primitives and applications, such as prefix scan, BFS, and wavefront path tracing. -->

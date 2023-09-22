@@ -310,4 +310,7 @@ gallery_item:
 - album: demo
   image: sa_tridiagonal_small.png
   caption: Density plot of eignevalues of tridiagonal matrices. [{{< icon name="github" pack="fab" >}}](https://github.com/seansiddens/BohemianMatrices)
+- album: demo
+  image: buddhabrot.png 
+  caption: Technique of rendering the Mandelbrot set, called the [Buddhabrot](https://superliminal.com/fractals/bbrot/). [{{< icon name="github" pack="fab" >}}](https://github.com/seansiddens/Mandelbrot)
 ---
