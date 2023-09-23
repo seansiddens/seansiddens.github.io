@@ -80,7 +80,7 @@ highlight_name: true
 ---
 
 Hey 👋, I'm Sean. I recently graduated with my BSc in Computer Science from University of California, Santa Cruz. There, I worked as a student researcher in the Concurrency and Heterogenous Programming Lab led by [Tyler Sorensen](https://users.soe.ucsc.edu/~tsorensen/). 
-There, I worked as a research assistant helping out on [Epiphron](git@github.com:ucsc-chpl/epiphron.git), a portable benchmark suite studying fine-grained synchronization and dynamic work allocation on GPUs. 
+There, I worked as a research assistant helping out on [Epiphron](https://github.com/ucsc-chpl/epiphron), a portable benchmark suite studying fine-grained synchronization and dynamic work allocation on GPUs. 
 Right now I'm applying for graduate school for 2024-2025.
 {style="text-align: justify;"}
 
