@@ -79,13 +79,13 @@ email: 'seansiddens@gmail.com'
 highlight_name: true
 ---
 
-Hey 👋, I'm Sean. I recently graduated with my BSc in Computer Science from University of California, Santa Cruz. There, I worked as a student researcher in the Concurrency and Heterogenous Programming Lab led by [Tyler Sorensen](https://users.soe.ucsc.edu/~tsorensen/). 
-There, I worked as a research assistant helping out on [Epiphron](https://github.com/ucsc-chpl/epiphron), a portable benchmark suite studying fine-grained synchronization and dynamic work allocation on GPUs. 
+Hey 👋, I'm Sean. I recently graduated with my BSc in Computer Science from University of California, Santa Cruz where I worked as a research assistant in the Concurrency and Heterogenous Programming Lab led by [Tyler Sorensen](https://users.soe.ucsc.edu/~tsorensen/). 
+There, I helped with [Epiphron](https://github.com/ucsc-chpl/epiphron), a portable benchmark suite studying fine-grained synchronization and dynamic work allocation on GPUs. 
 Right now I'm applying for graduate school for 2024-2025.
 {style="text-align: justify;"}
 
 My research interests generally revolve around leveraging hardware to speed up compute intensive workloads. Specifically, I'm interested in GPU programming, especially in application of dynamic and irregular workloads. 
-It's always more fun when your program produces something [cool looking](#gallery), so I'm especially interested in applying GPU programming to computer graphics and simulation.
+It's always more fun when your program produces something [cool looking](#gallery), so I'm especially interested in applying GPU programming to computer graphics and simulations.
 Parallel programming is hard, so I'm also interested in the potential of compilers and programming models in taking on the burden of producing performant code that runs fast across every vendor and even accelerator.
 
 <!-- This experience expanded my understanding of what GPUs were capable of. -->
