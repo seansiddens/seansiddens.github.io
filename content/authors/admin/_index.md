@@ -79,7 +79,8 @@ email: 'seansiddens@gmail.com'
 highlight_name: true
 ---
 
-Hey 👋, I'm Sean. I recently graduated with my BSc in Computer Science from University of California, Santa Cruz. There, I worked as a research assistant in the Concurrency and Heterogenous Programming Lab led by [Tyler Sorensen](https://users.soe.ucsc.edu/~tsorensen/) working on [Epiphron](https://github.com/ucsc-chpl/epiphron), a portable benchmark suite studying fine-grained synchronization and dynamic work allocation on GPUs. 
+Hey 👋, I'm Sean. I recently graduated with my BSc in Computer Science from University of California, Santa Cruz, where I worked as a research assistant in the [Concurrency and Heterogenous Programming Lab](https://github.com/ucsc-chpl) led by [Tyler Sorensen](https://users.soe.ucsc.edu/~tsorensen/).
+I significantly contributed to [Epiphron](https://github.com/ucsc-chpl/epiphron), a portable benchmark suite studying fine-grained synchronization and dynamic work allocation on GPUs. 
 Right now I'm applying for graduate school for 2024-2025.
 {style="text-align: justify;"}
 
