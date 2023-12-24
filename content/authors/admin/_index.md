@@ -29,11 +29,9 @@ role: Computer Science Student
 # Interests to show in About widget
 interests:
   - GPU Programming - fine grained synchronization, dynamic work allocation, GPGPU
-  - Computer Graphics - Real time rendering, physically based light transport, GPU driven rendering
-  - Compilers - unified programming models
-  - Computer Architecture  
-  - Mathematical/Scientific Visualization
-
+  - Computer Architecture - specialized architectures and heterogenous systems
+  - Computer Graphics - real time rendering, physically based light transport, GPU driven rendering
+  - Compilers 
 
 # Education to show in About widget
 education:
@@ -80,13 +78,13 @@ highlight_name: true
 ---
 
 Hey 👋, I'm Sean. I recently graduated with my BSc in Computer Science from University of California, Santa Cruz, where I worked as a research assistant in the [Concurrency and Heterogenous Programming Lab](https://github.com/ucsc-chpl) led by [Tyler Sorensen](https://users.soe.ucsc.edu/~tsorensen/).
-I significantly contributed to [Epiphron](https://github.com/ucsc-chpl/epiphron), a portable benchmark suite studying fine-grained synchronization and dynamic work allocation on GPUs. 
-Right now I'm applying for graduate school for 2024-2025.
+I significantly contributed to [Epiphron](https://github.com/ucsc-chpl/epiphron), a portable benchmark suite studying fine-grained synchronization and dynamic work allocation on GPUs. As of December 2023, I am working as a Junior Specialist at UCSC, contributing to the [Ecoscape project](https://ecoscape-earth.github.io/), a tool to visualize and model the habitat connectivity of birds in order to help inform conservation and climate efforts. Additionally, I'm working with Tyler at [Trail of Bits](https://www.trailofbits.com/) as an intern, investigating GPU security vulnerabilities of multi-tenant GPU systems.
 {style="text-align: justify;"}
 
-My research interests generally revolve around leveraging hardware to speed up compute intensive workloads. Specifically, I'm interested in GPU programming, especialy when applied to dynamic and irregular workloads. 
+My research interests generally around high performance computing, with an emphasis on parallel programming and heterogeneous architectures.
+I strongly believe that the future of computing will be significantly impacted by specialized hardware accelerators. 
+I'm interested in optimizing application performance on these systems and enhancing developer interaction through improved compiler tools and programming models. 
 It's always more fun when your program produces something [cool looking](#gallery), so I'm especially interested in applying GPU programming to computer graphics and simulations.
-Parallel programming is hard, so I'm also interested in the potential of compilers and programming models in taking on the burden of producing performant code that runs fast across every vendor and multiple accelerator types.
 
 <!-- This experience expanded my understanding of what GPUs were capable of. -->
 <!-- I implemented a global software barrier exploiting a persistent thread model, and researched various primitives and applications, such as prefix scan, BFS, and wavefront path tracing. -->
