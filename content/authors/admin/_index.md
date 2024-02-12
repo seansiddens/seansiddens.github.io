@@ -81,7 +81,7 @@ Hey 👋, I'm Sean. I recently graduated with my BSc in Computer Science from Un
 I significantly contributed to [Epiphron](https://github.com/ucsc-chpl/epiphron), a portable benchmark suite studying fine-grained synchronization and dynamic work allocation on GPUs. As of December 2023, I am working as a Junior Specialist at UCSC, contributing to the [Ecoscape project](https://ecoscape-earth.github.io/), a tool to visualize and model the habitat connectivity of birds in order to help inform conservation and climate efforts. Additionally, I'm working with Tyler at [Trail of Bits](https://www.trailofbits.com/) as an intern, investigating GPU security vulnerabilities of multi-tenant GPU systems.
 {style="text-align: justify;"}
 
-My research interests generally around high performance computing, with an emphasis on parallel programming and heterogeneous architectures.
+My research interests generally revolve around high performance computing, with an emphasis on parallel programming and heterogeneous architectures.
 I strongly believe that the future of computing will be significantly impacted by specialized hardware accelerators. 
 I'm interested in optimizing application performance on these systems and enhancing developer interaction through improved compiler tools and programming models. 
 It's always more fun when your program produces something [cool looking](#gallery), so I'm especially interested in applying GPU programming to computer graphics and simulations.
