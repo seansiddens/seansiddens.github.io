@@ -77,12 +77,20 @@ email: 'seansiddens@gmail.com'
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 ---
+
+<!-- Add the last updated HTML here -->
+<p class="last-updated" style="font-size: 0.8em; color: #666; text-align: left;">
+Last updated: 9/18/24
+</p>
+
 Hey 👋, I'm Sean. 
 I'm a first year computer science PhD student at the [University of Washington](https://www.cs.washington.edu/), advised by [Mark Oskin](https://homes.cs.washington.edu/~oskin/).
 
 My research interests generally revolve around high performance computing, with an emphasis on parallel programming and heterogeneous architectures.
 I strongly believe that the future of computing will be significantly impacted by specialized hardware accelerators. 
 I'm interested in optimizing application performance on these systems and enhancing developer interaction through improved compiler tools and programming models. 
+
+
 
 <!-- It's always more fun when your program produces something [cool looking](#gallery), so I'm especially interested in applying GPU programming to computer graphics and simulations.  -->
 
