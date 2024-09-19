@@ -1,0 +1,38 @@
+# Theme metadata
+name = "UW Theme"
+
+[light]
+  # Primary
+  primary = "#4b2e83"
+
+  # Menu
+  menu_primary = "#4b2e83"
+  menu_text = "#fff"
+  menu_text_active = "#b7a57a"
+  menu_title = "#fff"
+
+  # Links
+  link = "#4b2e83"
+  link_hover = "#b7a57a"
+
+  # Home sections
+  home_section_odd = "rgb(255, 255, 255)"
+  home_section_even = "rgb(247, 247, 247)"
+
+[dark]
+  # Primary
+  primary = "#4b2e83"
+
+  # Menu
+  menu_primary = "#4b2e83"
+  menu_text = "#fff"
+  menu_text_active = "#b7a57a"
+  menu_title = "#fff"
+
+  # Links
+  link = "#b7a57a"
+  link_hover = "#4b2e83"
+
+  # Home sections
+  home_section_odd = "rgb(50, 50, 50)"
+  home_section_even = "rgb(30, 30, 30)"

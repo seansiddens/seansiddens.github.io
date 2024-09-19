@@ -156,6 +156,16 @@ sections:
   #     # For Showcase view, flip alternate rows?
   #     flip_alt_rows: false
   - block: markdown
+    content:
+      title: Timeline
+      text: |-
+        - **Dec 2023**: Completed a winternship at [Trail of Bits](https://www.trailofbits.com/) with Tyler Sorensen, where I investigated security vulnerabiltiies of multi-tenant GPU systems.
+        - **Apr '23 - Sep '23**: Participated in research as an undergrad at the Concurrency and Heterogenous Programming Lab ([CHPL](https://github.com/ucsc-chpl)) at UCSC. 
+          - Significantly contributed to [Epiphron](https://github.com/ucsc-chpl/epiphron), a portable benchmark suite studying fine-grained synchronization and dynamic work allocation on GPUs.
+    design: 
+      columns: '2'
+
+  - block: markdown
     id: gallery
     content:
       title: Gallery
