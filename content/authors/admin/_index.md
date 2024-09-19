@@ -14,13 +14,12 @@ status:
 superuser: true
 
 # Role/position/tagline
-# TODO: Update taglien.
 role: Computer Science PhD Student
 
 # Organizations/Affiliations to show in About widget
 organizations:
   - name: University of Washington
-    url: https://www.stanford.edu/
+    url: https://www.cs.washington.edu/
 
 # Short bio (displayed in user profile at end of posts)
 # bio: 
@@ -78,15 +77,22 @@ email: 'seansiddens@gmail.com'
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 ---
-
-Hey 👋, I'm Sean. I recently graduated with my BSc in Computer Science from University of California, Santa Cruz, where I worked as a research assistant in the [Concurrency and Heterogenous Programming Lab](https://github.com/ucsc-chpl) led by [Tyler Sorensen](https://users.soe.ucsc.edu/~tsorensen/).
-I significantly contributed to [Epiphron](https://github.com/ucsc-chpl/epiphron), a portable benchmark suite studying fine-grained synchronization and dynamic work allocation on GPUs. As of December 2023, I am working as a Junior Specialist at UCSC, contributing to the [Ecoscape project](https://ecoscape-earth.github.io/), a tool to visualize and model the habitat connectivity of birds in order to help inform conservation and climate efforts. Additionally, I'm working with Tyler at [Trail of Bits](https://www.trailofbits.com/) as an intern, investigating GPU security vulnerabilities of multi-tenant GPU systems.
-{style="text-align: justify;"}
+Hey 👋, I'm Sean. 
+I'm a first year computer science PhD student at the [University of Washington](https://www.cs.washington.edu/), advised by [Mark Oskin](https://homes.cs.washington.edu/~oskin/).
 
 My research interests generally revolve around high performance computing, with an emphasis on parallel programming and heterogeneous architectures.
 I strongly believe that the future of computing will be significantly impacted by specialized hardware accelerators. 
 I'm interested in optimizing application performance on these systems and enhancing developer interaction through improved compiler tools and programming models. 
-It's always more fun when your program produces something [cool looking](#gallery), so I'm especially interested in applying GPU programming to computer graphics and simulations.
+
+<!-- It's always more fun when your program produces something [cool looking](#gallery), so I'm especially interested in applying GPU programming to computer graphics and simulations.  -->
+
+
+<!-- I recently graduated with my BSc in Computer Science from University of California, Santa Cruz, where I worked as a research assistant in the [Concurrency and Heterogenous Programming Lab](https://github.com/ucsc-chpl) led by [Tyler Sorensen](https://users.soe.ucsc.edu/~tsorensen/). -->
+
+<!-- Hey 👋, I'm Sean. I recently graduated with my BSc in Computer Science from University of California, Santa Cruz, where I worked as a research assistant in the [Concurrency and Heterogenous Programming Lab](https://github.com/ucsc-chpl) led by [Tyler Sorensen](https://users.soe.ucsc.edu/~tsorensen/).
+I significantly contributed to [Epiphron](https://github.com/ucsc-chpl/epiphron), a portable benchmark suite studying fine-grained synchronization and dynamic work allocation on GPUs. As of December 2023, I am working as a Junior Specialist at UCSC, contributing to the [Ecoscape project](https://ecoscape-earth.github.io/), a tool to visualize and model the habitat connectivity of birds in order to help inform conservation and climate efforts. Additionally, I'm working with Tyler at [Trail of Bits](https://www.trailofbits.com/) as an intern, investigating GPU security vulnerabilities of multi-tenant GPU systems.
+<!-- {style="text-align: justify;"} -->
+
 
 <!-- This experience expanded my understanding of what GPUs were capable of. -->
 <!-- I implemented a global software barrier exploiting a persistent thread model, and researched various primitives and applications, such as prefix scan, BFS, and wavefront path tracing. -->

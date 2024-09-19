@@ -212,8 +212,8 @@ sections:
       text: |-
         Feel free to reach out:
       # Contact (add or remove contact options as necessary)
-      email: seansiddens@gmail.com
-      phone: 1-(805)-390-0976
+      email: ssiddens@cs.washington.edu
+      # phone: 1-(805)-390-0976
       # appointment_url: 'https://calendly.com'
       # address:
       #   street: 450 Serra Mall
