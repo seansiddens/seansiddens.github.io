@@ -11,8 +11,8 @@ main:
     url: '#gallery'
     weight: 15
   - name: Timeline
-    url: 'timeline/'
-    weight: 16
+    url: '#timeline'
+    weight: 11
   - name: Posts
     url: './post'
     weight: 20
@@ -24,7 +24,7 @@ main:
   #   weight: 40
   - name: Publications
     url: './publication'
-    weight: 11
+    weight: 17
   - name: Contact
     url: '#contact'
     weight: 60
