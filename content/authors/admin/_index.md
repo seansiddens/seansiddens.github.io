@@ -15,13 +15,12 @@ superuser: true
 
 # Role/position/tagline
 # TODO: Update taglien.
-role: Computer Science Student
+role: Computer Science PhD Student
 
 # Organizations/Affiliations to show in About widget
-# TODO: Update organization.
-# organizations:
-#   - name: Stanford University
-#     url: https://www.stanford.edu/
+organizations:
+  - name: University of Washington
+    url: https://www.stanford.edu/
 
 # Short bio (displayed in user profile at end of posts)
 # bio: 
@@ -36,9 +35,12 @@ interests:
 # Education to show in About widget
 education:
   courses:
+    - course: PhD in Computer Science
+      institution: University of Washington 
+      year: 2024 - Present
     - course: BSc in Computer Science
       institution: University Of California, Santa Cruz
-      year: 2023
+      year: 2020 - 2023
 
 # Social/Academic Networking
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons
