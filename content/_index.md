@@ -160,10 +160,11 @@ sections:
     content:
       title: Timeline
       text: |-
+        - **April 3rd '25**: Gave a developer talk at [TT-DevDay](https://tenstorrent.com/en/developer-day) on [improving the programming model](https://docs.google.com/presentation/d/1dpgrF7BHMxQxKwdczNYnVRSdghCqZ70wpTq-kProDpg/edit?usp=sharing) of Tenstorrent AI accelerators.
         - **Sep '24**: Started my PhD at UW!
         - **Feb 7-9th '24**: Attended [Vulkanised 2024](https://vulkan.org/events/vulkanised-2024#agenda) where Devon McKee gave [a presentation](https://www.youtube.com/watch?v=VaE_uKPfjv0) on work I partially collaborated on.
         - **Jan '24 - Aug '24**: Worked as a Junior Specialist at UCSC, leading work on the [Ecoscape project](https://ecoscape-earth.github.io/), a tool to visualize and model the habitat connectivity of birds in order to help inform conservation and climate efforts.
-        - **Dec '23 - Jan '24**: Completed a winternship at [Trail of Bits](https://www.trailofbits.com/) with Tyler Sorensen, where I investigated security vulnerabiltiies of multi-tenant GPU systems.
+        - **Dec '23 - Jan '24**: Completed a winternship at [Trail of Bits](https://www.trailofbits.com/) with Tyler Sorensen, where I investigated security vulnerabilties of multi-tenant GPU systems.
         - **Apr '23 - Sep '23**: Participated in research as an undergrad at the Concurrency and Heterogenous Programming Lab ([CHPL](https://github.com/ucsc-chpl)) at UCSC. 
           - Significantly contributed to [Epiphron](https://github.com/ucsc-chpl/epiphron), a portable benchmark suite studying fine-grained synchronization and dynamic work allocation on GPUs.
     design: 
