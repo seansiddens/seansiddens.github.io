@@ -1,15 +1,11 @@
-# My Personal Site
+# seansiddens.github.io
 
-## Build
-Install Hugo's dependencies:
+Personal website. Plain HTML/CSS/JS, no build step.
 
-`sudo snap install --classic go node`
+## Local development
 
-View a local version of the site with
+```bash
+python3 -m http.server 8080
+```
 
-`./hugo server`
-
-
-Docs: https://wowchemy.com/docs/
-
-It should deploy to gh pages automatically using the github action, but if not see this: https://dev.to/github/how-to-host-a-static-nextjs-site-on-github-pages-4pe0
+Open `http://localhost:8080`.

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Manichaean&amp;display=swap');</style>
+  </defs>
+  <circle cx="16" cy="16" r="16" fill="#4a7c3f"/>
+  <text x="16" y="21" text-anchor="middle"
+    font-family="'Noto Sans Manichaean', serif" font-size="22" fill="white">𐫱</text>
+</svg>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects &mdash; Sean Siddens</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .project-list {
+      margin-top: 2rem;
+    }
+
+    .project {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .project:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .project-title {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-nav"><a href="/">← home</a></div>
+
+  <main>
+    <h1>Projects</h1>
+
+    <div class="project-list">
+
+      <div class="project">
+        <p class="project-title"><a href="https://github.com/ucsc-chpl/epiphron">Epiphron</a> <span style="color:var(--muted);font-size:0.88rem;">C++, OpenCL</span></p>
+        <p class="project-desc">Benchmark suite geared towards fine-grained synchronization and dynamic work allocation on GPUs.</p>
+      </div>
+
+      <div class="project">
+        <p class="project-title"><a href="https://github.com/seansiddens/VulkanEngine">Vulkan Renderer</a> <span style="color:var(--muted);font-size:0.88rem;">C++, Vulkan</span></p>
+        <p class="project-desc">A Vulkan 3D rendering engine. Features OBJ mesh loading, FPS and arcball camera systems, PBR and Blinn-Phong materials, point, directional, and cubemap lighting.</p>
+      </div>
+
+      <div class="project">
+        <p class="project-title"><a href="https://github.com/seansiddens/PhysarumSim">Physarum Sim</a> <span style="color:var(--muted);font-size:0.88rem;">C++, OpenGL</span></p>
+        <p class="project-desc">An agent-based simulation of the foraging and exploratory behavior of slime molds. Uses OpenGL compute shaders to update the positions of agents every time step.</p>
+      </div>
+
+      <div class="project">
+        <p class="project-title"><a href="https://github.com/seansiddens/PathTracer">CPU Path Tracer</a> <span style="color:var(--muted);font-size:0.88rem;">C</span></p>
+        <p class="project-desc">A simple path tracer written in C. Code is adapted from Peter Shirley's Ray Tracing in One Weekend book series.</p>
+      </div>
+
+      <div class="project">
+        <p class="project-title"><a href="https://github.com/seansiddens/BohemianMatrices">Bohemian Matrices</a> <span style="color:var(--muted);font-size:0.88rem;">Python</span></p>
+        <p class="project-desc">A script for visualizing the distributions of eigenvalues of random distributions of square matrices.</p>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>

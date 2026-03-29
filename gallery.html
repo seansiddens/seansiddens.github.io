@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery &mdash; Sean Siddens</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    main {
+      max-width: 1400px;
+    }
+
+    .gallery-item {
+      margin: 0;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      border-radius: 2px;
+    }
+
+    .gallery-item figcaption {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .gallery-item figcaption a {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .gallery-item figcaption a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 560px) {
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+      }
+
+      .gallery-item img {
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-nav"><a href="/">← home</a></div>
+
+  <main>
+    <h1>Gallery</h1>
+
+    <div class="gallery-grid">
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/ca_pathtrace_forest.png" alt="Path-traced forest scene">
+        <figcaption>Path-traced forest scene &mdash; <a href="https://github.com/seansiddens/PathTracer">PathTracer</a></figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/ia_dark_scene.png" alt="Dark path-traced scene">
+        <figcaption>Dark path-traced scene &mdash; <a href="https://github.com/seansiddens/PathTracer">PathTracer</a></figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/fa_random_scene.png" alt="Random path-traced scene">
+        <figcaption>Random path-traced scene &mdash; <a href="https://github.com/seansiddens/PathTracer">PathTracer</a></figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/qa_slimy.gif" alt="Physarum slime mold simulation">
+        <figcaption>Physarum slime mold simulation &mdash; <a href="https://github.com/seansiddens/PhysarumSim">PhysarumSim</a></figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/ja_DLA_colors.gif" alt="Diffusion-limited aggregation">
+        <figcaption>Diffusion-limited aggregation</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/ea_random_walkers.gif" alt="Random walkers">
+        <figcaption>Random walkers</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/ka_eigenvalue_rotation.gif" alt="Bohemian matrix eigenvalue rotation">
+        <figcaption>Bohemian matrix eigenvalues &mdash; <a href="https://github.com/seansiddens/BohemianMatrices">BohemianMatrices</a></figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/ga_mandelbrot+julia.gif" alt="Mandelbrot and Julia sets">
+        <figcaption>Mandelbrot &amp; Julia sets</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/la_julia_rotate.gif" alt="Julia set rotation">
+        <figcaption>Julia set rotation</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/ma_julia_tile.gif" alt="Julia set tiling">
+        <figcaption>Julia set tiling</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/ra_sphere_cube.gif" alt="3D sphere and cube">
+        <figcaption>Sphere &amp; cube</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/aa_littlewood_fractal_small.png" alt="Littlewood polynomial fractal">
+        <figcaption>Littlewood polynomial fractal &mdash; <a href="https://github.com/seansiddens/BohemianMatrices">BohemianMatrices</a></figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/na_littlewood_zoom.png" alt="Littlewood fractal zoom">
+        <figcaption>Littlewood fractal (zoom) &mdash; <a href="https://github.com/seansiddens/BohemianMatrices">BohemianMatrices</a></figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/ha_newton_fractal.png" alt="Newton fractal">
+        <figcaption>Newton fractal</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/pa_mandelbrot_small.png" alt="Mandelbrot set">
+        <figcaption>Mandelbrot set</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/cb_buddhabrot.png" alt="Buddhabrot">
+        <figcaption>Buddhabrot</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/sa_tridiagonal_small.png" alt="Tridiagonal matrix eigenvalues">
+        <figcaption>Tridiagonal matrix eigenvalues &mdash; <a href="https://github.com/seansiddens/BohemianMatrices">BohemianMatrices</a></figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/ba_beta_small.png" alt="Beta matrix eigenvalue plot">
+        <figcaption>Beta matrix eigenvalues &mdash; <a href="https://github.com/seansiddens/BohemianMatrices">BohemianMatrices</a></figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/da_triangle_chaos_game_small.png" alt="Triangle chaos game">
+        <figcaption>Triangle chaos game</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img src="assets/images/gallery/oa_sierpinski_chaos_game.png" alt="Sierpinski chaos game">
+        <figcaption>Sierpiński chaos game</figcaption>
+      </figure>
+
+    </div>
+  </main>
+
+</body>
+</html>

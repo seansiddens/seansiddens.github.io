@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Sans+Manichaean&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #faf9f7;
+  --fg: #1a1a1a;
+  --muted: #787672;
+  --border: #e2dfd8;
+  --accent: #4a7c3f;
+  --width: 860px;
+}
+
+html {
+  font-size: 21px;
+}
+
+body {
+  font-family: 'EB Garamond', Georgia, serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.7;
+  padding: 0 2rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Page nav (inner pages) ── */
+
+.page-nav {
+  margin-bottom: 3rem;
+  font-size: 0.9rem;
+}
+
+.page-nav a {
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.page-nav a:hover {
+  color: var(--accent);
+}
+
+/* ── Links ── */
+
+.fleuron {
+  font-family: 'Noto Sans Manichaean', serif;
+  color: var(--accent);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-color: var(--accent);
+}
+
+/* ── Main content ── */
+
+main {
+  max-width: var(--width);
+  margin: 0 auto;
+}
+
+/* ── Typography ── */
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.2rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 1.75rem;
+  margin-bottom: 0.4rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+em {
+  font-style: italic;
+}
+
+
+/* ── Responsive ── */
+
+@media (max-width: 560px) {
+  html {
+    font-size: 17px;
+  }
+
+  body {
+    padding: 0 1.25rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .nav-links a {
+    margin-left: 0;
+    margin-right: 1.5rem;
+  }
+}

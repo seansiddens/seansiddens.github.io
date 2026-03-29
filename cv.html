@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV &mdash; Sean Siddens</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .cv-section {
+      margin-top: 2.5rem;
+    }
+
+    .cv-section h2 {
+      margin-top: 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cv-entry {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0 1.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .cv-entry-title {
+      font-weight: 500;
+    }
+
+    .cv-entry-sub {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .cv-entry-date {
+      color: var(--muted);
+      font-size: 0.9rem;
+      white-space: nowrap;
+      text-align: right;
+      grid-row: span 2;
+      align-self: start;
+      padding-top: 0.1rem;
+    }
+
+    .cv-entry-desc {
+      font-size: 0.95rem;
+      margin-top: 0.3rem;
+      grid-column: 1;
+    }
+
+    .cv-pdf-link {
+      display: inline-block;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-nav"><a href="/">← home</a></div>
+
+  <main>
+    <h1>CV</h1>
+    <a class="cv-pdf-link" href="/assets/uploads/resume.pdf">Download PDF &darr;</a>
+
+    <div class="cv-section">
+      <h2>Education</h2>
+
+      <div class="cv-entry">
+        <span class="cv-entry-title">University of Washington</span>
+        <span class="cv-entry-date">2024 &ndash; present</span>
+        <span class="cv-entry-sub">PhD, Computer Science &middot; Advisor: Mark Oskin</span>
+      </div>
+
+      <div class="cv-entry">
+        <span class="cv-entry-title">University of California, Santa Cruz</span>
+        <span class="cv-entry-date">2020 &ndash; 2023</span>
+        <span class="cv-entry-sub">BSc, Computer Science</span>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h2>Experience</h2>
+
+      <div class="cv-entry">
+        <span class="cv-entry-title">Tenstorrent</span>
+        <span class="cv-entry-date">Apr 2025</span>
+        <span class="cv-entry-sub">Developer talk &mdash; Tenstorrent Developer Day</span>
+        <span class="cv-entry-desc">Talk on improving AI accelerator programming models.</span>
+      </div>
+
+      <div class="cv-entry">
+        <span class="cv-entry-title">University of California, Santa Cruz</span>
+        <span class="cv-entry-date">Jan &ndash; Aug 2024</span>
+        <span class="cv-entry-sub">Junior Specialist</span>
+        <span class="cv-entry-desc">Contributed to the <a href="https://ecoscape-earth.github.io/">Ecoscape project</a>, a tool to visualize and model habitat connectivity of birds to inform conservation and climate efforts.</span>
+      </div>
+
+      <div class="cv-entry">
+        <span class="cv-entry-title">Trail of Bits</span>
+        <span class="cv-entry-date">Dec 2023 &ndash; Jan 2024</span>
+        <span class="cv-entry-sub">Winternship</span>
+        <span class="cv-entry-desc">Investigated GPU security vulnerabilities in multi-tenant GPU systems.</span>
+      </div>
+
+      <div class="cv-entry">
+        <span class="cv-entry-title">UC Santa Cruz &mdash; CHPL Lab</span>
+        <span class="cv-entry-date">Apr &ndash; Sep 2023</span>
+        <span class="cv-entry-sub">Undergraduate Researcher</span>
+        <span class="cv-entry-desc">Contributed to <a href="https://github.com/ucsc-chpl/epiphron">Epiphron</a>, a portable benchmark suite studying fine-grained synchronization and dynamic work allocation on GPUs.</span>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h2>Publications</h2>
+      <p style="color: var(--muted); font-style: italic; font-size: 0.95rem;">None yet.</p>
+    </div>
+
+  </main>
+
+
+</body>
+</html>

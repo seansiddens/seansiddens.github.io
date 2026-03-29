@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sean Siddens</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      padding-top: 3rem;
+    }
+
+    .photo {
+      float: left;
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 3px;
+      margin: 0.25rem 2rem 1rem 0;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .bio p {
+      margin-bottom: 1rem;
+    }
+
+    .bio::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .links {
+      margin-top: 1.75rem;
+      font-size: 0.95rem;
+    }
+
+    .links a {
+      color: var(--fg);
+      text-decoration: none;
+      margin-right: 1.5rem;
+    }
+
+    .links a:hover {
+      color: var(--accent);
+    }
+
+    .contact {
+      margin-top: 0.6rem;
+      font-size: 0.88rem;
+      color: var(--fg);
+    }
+
+    .contact a {
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      color: var(--accent);
+    }
+
+    .timeline {
+      margin-top: 3rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+
+    .timeline-entry {
+      display: grid;
+      grid-template-columns: 9rem 1fr;
+      gap: 0 1.5rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .timeline-date {
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding-top: 0.15rem;
+      text-align: right;
+    }
+
+    .timeline-desc {
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 560px) {
+      .timeline-entry {
+        grid-template-columns: 1fr;
+        gap: 0.15rem;
+        margin-bottom: 1.4rem;
+      }
+
+      .timeline-date {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .photo {
+        float: none;
+        display: block;
+        margin: 0 0 1.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <div class="bio">
+      <img class="photo" src="assets/images/avatar.jpg" alt="Sean Siddens">
+
+      <p>Hey 👋, I'm Sean. I'm <span id="phd-year"></span> years into a computer science PhD at the <a href="https://www.cs.washington.edu/">University of Washington</a>, advised by <a href="https://homes.cs.washington.edu/~oskin/">Mark Oskin</a>. I also work full time as a researcher at <a href="https://www.amd.com/en/corporate/research.html">AMD Research and Advanced Development (RAD)</a>.</p>
+
+      <p>My research interests generally revolve around high performance computing, with an emphasis on parallel programming and heterogeneous architectures.
+      I strongly believe that the future of computing will be significantly impacted by specialized hardware accelerators.
+      I'm interested in optimizing application performance on these systems and enhancing developer interaction through improved compiler tools and programming models.</p>
+    </div>
+
+    <div class="links">
+      <a href="blog/">blog</a>
+      <a href="gallery.html">gallery</a>
+      <a href="projects.html">projects</a>
+      <a href="publications.html">publications</a>
+      <!-- <a href="cv.html">cv</a> -->
+      <a href="https://github.com/seansiddens">github</a>
+    </div>
+    <div class="contact">
+      Feel free to contact me: seansiddens@gmail.com <span class="fleuron">𐫱</span> ssiddens@cs.washington.edu <span class="fleuron">𐫱</span> <a href="https://twitter.com/SeanSiddens">twitter</a> <span class="fleuron">𐫱</span> <a href="https://www.linkedin.com/in/sean-siddens-5a7929185/">linkedin</a>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-entry">
+        <span class="timeline-date">Mar 2026</span>
+        <span class="timeline-desc">Joined AMD RAD full time as a Senior Software Engineer, continuing research on GPU layout abstractions.</span>
+      </div>
+      <div class="timeline-entry">
+        <span class="timeline-date">Nov 2025</span>
+        <span class="timeline-desc">Collaborated with Stanford's <a href="https://hazyresearch.stanford.edu/">Hazy Research</a> lab on <a href="https://arxiv.org/abs/2511.08083">HipKittens</a>.</span>
+      </div>
+      <div class="timeline-entry">
+        <span class="timeline-date">Jun 2025</span>
+        <span class="timeline-desc">Started a research associate internship at AMD RAD, bringing layout abstractions to AMD Instinct GPUs, advised by <a href="https://github.com/neoblizz">Muhammad Osama</a>.</span>
+      </div>
+      <div class="timeline-entry">
+        <span class="timeline-date">Apr 2025</span>
+        <span class="timeline-desc">Gave a developer talk at <a href="https://tenstorrent.com/en/developer-day">TT-DevDay</a> on <a href="https://docs.google.com/presentation/d/1dpgrF7BHMxQxKwdczNYnVRSdghCqZ70wpTq-kProDpg/view?usp=sharing">improving the programming model</a> of Tenstorrent AI accelerators.</span>
+      </div>
+      <div class="timeline-entry">
+        <span class="timeline-date">Sep 2024</span>
+        <span class="timeline-desc">Started my PhD at UW.</span>
+      </div>
+      <div class="timeline-entry">
+        <span class="timeline-date">Jan–Aug 2024</span>
+        <span class="timeline-desc">Worked as a Junior Specialist at UCSC, leading work on the <a href="https://ecoscape-earth.github.io/">Ecoscape project</a>, a tool to visualize and model the habitat connectivity of birds to inform conservation and climate efforts.</span>
+      </div>
+      <div class="timeline-entry">
+        <span class="timeline-date">Feb 2024</span>
+        <span class="timeline-desc">Attended <a href="https://vulkan.org/events/vulkanised-2024#agenda">Vulkanised 2024</a>, where Devon McKee gave <a href="https://www.youtube.com/watch?v=VaE_uKPfjv0">a presentation</a> on work I partially collaborated on.</span>
+      </div>
+      <div class="timeline-entry">
+        <span class="timeline-date">Dec 2023–Jan 2024</span>
+        <span class="timeline-desc">Completed a winternship at <a href="https://www.trailofbits.com/">Trail of Bits</a> with Tyler Sorensen, investigating security vulnerabilities of multi-tenant GPU systems.</span>
+      </div>
+      <div class="timeline-entry">
+        <span class="timeline-date">Apr–Sep 2023</span>
+        <span class="timeline-desc">Undergraduate researcher at the Concurrency and Heterogeneous Programming Lab (<a href="https://github.com/ucsc-chpl">CHPL</a>) at UCSC. Significantly contributed to <a href="https://github.com/ucsc-chpl/epiphron">Epiphron</a>, a portable benchmark suite studying fine-grained synchronization and dynamic work allocation on GPUs.</span>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const start = new Date(2024, 8, 1); // September 1, 2024
+    const elapsed = (Date.now() - start.getTime()) / (1000 * 60 * 60 * 24 * 365.25);
+    document.getElementById('phd-year').textContent = elapsed.toFixed(2);
+  </script>
+
+</body>
+</html>
