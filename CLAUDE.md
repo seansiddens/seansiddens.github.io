@@ -25,3 +25,7 @@ Plain HTML/CSS/JS static site. No framework, no bundler, no dependencies to inst
 - [assets/uploads/resume.pdf](assets/uploads/resume.pdf) — linked from the CV page as a download
 
 All pages share the same nav structure and reference `../style.css` (or `./style.css` from the root).
+
+## Conventions
+
+- When adding a song to the "songs i like" list on [other.html](other.html), insert it at the **top** of the list — newest songs first.
