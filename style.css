@@ -93,6 +93,8 @@ main {
   line-height: 1.2;
   font-size: 0.95rem;
   padding-top: 0.25rem;
+  position: sticky;
+  top: 3rem;
 }
 
 .side-nav a {
@@ -172,6 +174,7 @@ em {
     gap: 0.25rem 0.6rem;
     order: -1;
     margin-bottom: 1.5rem;
+    position: static;
   }
 
   .side-nav .fleuron {
